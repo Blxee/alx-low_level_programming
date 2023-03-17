@@ -18,22 +18,26 @@ int main(void)
 			{
 				write(STDOUT_FILENO, "0", 1);
 				putchar('0' + i);
+				fflush(stdout);
 			}
 			else
 			{
 				putchar('0' + i / 10);
 				putchar('0' + i % 10);
+				fflush(stdout);
 			}
 			write(STDOUT_FILENO, " ", 1);
 			if (j < 10)
 			{
 				write(STDOUT_FILENO, "0", 1);
 				putchar('0' + j);
+				fflush(stdout);
 			}
 			else
 			{
 				putchar('0' + j / 10);
 				putchar('0' + j % 10);
+				fflush(stdout);
 			}
 			if (!(i == 98 && j == 99))
 			{
