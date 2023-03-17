@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 /**
  * main - Entry point
@@ -15,17 +16,19 @@ int main(void)
 		{
 			if (i < 10)
 			{
-				putchar('0');
+				write(STDOUT_FILENO, "0", 1);
+				putchar('0' + i);
 			}
 			else
 			{
 				putchar('0' + i / 10);
 				putchar('0' + i % 10);
 			}
-			putchar(' ');
+			write(STDOUT_FILENO, " ", 1);
 			if (j < 10)
 			{
-				putchar('0');
+				write(STDOUT_FILENO, "0", 1);
+				putchar('0' + j);
 			}
 			else
 			{
@@ -34,12 +37,11 @@ int main(void)
 			}
 			if (!(i == 98 && j == 99))
 			{
-				putchar(',');
-				putchar(' ');
+				write(STDOUT_FILENO, ", ", 2);
 			}
 		}
 	}
-	putchar('\n');
+	write(STDOUT_FILENO, "\n", 1);
 
 	return (0);
 }
