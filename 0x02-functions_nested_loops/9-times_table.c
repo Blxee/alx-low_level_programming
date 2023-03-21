@@ -16,13 +16,16 @@ void times_table(void)
 
 			if (tens > 0)
 				_putchar('0' + tens);
+			else
+				_putchar(' ');
+
 			_putchar('0' + ones);
 
 			if (op1 == 9)
 				continue;
-			_putchar(' ');
-			_putchar(' ');
 			_putchar(',');
+			_putchar(' ');
+			_putchar(' ');
 		}
 		_putchar('\n');
 
