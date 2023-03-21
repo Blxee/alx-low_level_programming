@@ -1,4 +1,3 @@
-#include <_putchar.h>
 #include "main.h"
 
 /**
@@ -6,7 +5,7 @@
  * Description: prints _putchar
  * Return: 0 (success)
  */
-void putchar()
+int main(void)
 {
 	char str[] = "_putchar\n\0";
 	int i = 0;
