@@ -16,7 +16,7 @@ void times_table(void)
 
 			if (tens > 0)
 				_putchar('0' + tens);
-			else
+			else if (op2 != 0)
 				_putchar(' ');
 
 			_putchar('0' + ones);
