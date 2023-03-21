@@ -21,6 +21,8 @@ void jack_bauer(void)
 				_putchar('0' + tens);
 			_putchar('0' + ones);
 
+			_putchar(':');
+
 			tens = minutes / 10;
 			ones = minutes % 10;
 			if (minutes < 10)
