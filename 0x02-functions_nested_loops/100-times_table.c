@@ -25,7 +25,7 @@ void print_times_table(int n)
 			{
 				_putchar(' ');
 				_putchar(hundreds == 0 ? ' ' : '0' + hundreds);
-				_putchar(tens == 0 ? ' ' : '0' + tens);
+				_putchar(tens == 0 && hundreds == 0 ? ' ' : '0' + tens);
 			}
 			_putchar('0' + ones);
 			if (op2 != n)
