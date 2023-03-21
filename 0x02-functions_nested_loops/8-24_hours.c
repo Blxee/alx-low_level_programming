@@ -22,7 +22,7 @@ void jack_bauer(void)
 			_putchar('0' + ones);
 
 			tens = minutes / 10;
-			ones = mintues % 10;
+			ones = minutes % 10;
 			if (minutes < 10)
 				_putchar('0');
 			else
