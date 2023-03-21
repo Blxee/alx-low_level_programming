@@ -12,9 +12,9 @@ int main(void)
 	for (i = 0; i < 98; i++)
 	{
 		if (i == 97)
-			printf("%ld\n", num1);
+			printf("%lld\n", num1);
 		else
-			printf("%ld, ", num1);
+			printf("%lld, ", num1);
 
 		temp = num2;
 		num2 += num1;
