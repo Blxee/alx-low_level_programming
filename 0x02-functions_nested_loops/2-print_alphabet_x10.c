@@ -2,6 +2,7 @@
 
 /**
  * void print_alphabet_x10 - print the alphabet in lowercase 10x times
+ * Description: prints the alphabet 10x times
  */
 void print_alphabet_x10(void)
 {
