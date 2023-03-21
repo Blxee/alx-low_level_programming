@@ -7,11 +7,11 @@
 int main(void)
 {
 	int i;
-	long num1 = 1, num2 = 2, temp;
+	long long num1 = 1, num2 = 2, temp;
 
 	for (i = 0; i < 98; i++)
 	{
-		if (i == 49)
+		if (i == 97)
 			printf("%ld\n", num1);
 		else
 			printf("%ld, ", num1);
