@@ -11,7 +11,7 @@ int main(void)
 		      num_a2 = 0,
 		      num_b1 = 2,
 		      num_b2 = 0,
-		      THRESHHOLD = 10000000000;
+		      THRESHHOLD = 1000000;
 
 	for (i = 0; i < 98; i++)
 	{
