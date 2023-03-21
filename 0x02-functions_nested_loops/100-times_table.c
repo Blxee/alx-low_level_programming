@@ -6,9 +6,10 @@
  */
 void print_times_table(int n)
 {
+	int op1, op2;
+
 	if (n > 15 || n < 0)
 		return;
-	int op1, op2;
 
 	for (op1 = 0; op1 <= n; op1++)
 	{
