@@ -1,20 +1,20 @@
 #include <stdio.h>
 
 /**
- * main - prints the first 50 fibonacci numbers
+ * main - Prints the first 50 fibonacci numbers
  * Return: Always 0
  */
 int main(void)
 {
 	int i;
-	long long num1 = 1, num2 = 2, temp;
+	unsigned long num1 = 1, num2 = 2, temp;
 
 	for (i = 0; i < 98; i++)
 	{
 		if (i == 97)
-			printf("%lld\n", num1);
+			printf("%lu\n", num1);
 		else
-			printf("%lld, ", num1);
+			printf("%lu, ", num1);
 
 		temp = num2;
 		num2 += num1;
