@@ -15,7 +15,7 @@ void print_times_table(int n)
 	{
 		for (op2 = 0; op2 <= n; op2++)
 		{
-			res = op1 * op2;
+			int res = op1 * op2;
 
 			int ones = res % 10,
 			    tens = res / 10 % 10,
