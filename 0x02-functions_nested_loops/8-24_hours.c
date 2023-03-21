@@ -15,7 +15,7 @@ void jack_bauer(void)
 
 			tens = hours / 10;
 			ones = hours % 10;
-			if (hour < 10)
+			if (hours < 10)
 				_putchar('0');
 			else
 				_putchar('0' + tens);
@@ -23,7 +23,7 @@ void jack_bauer(void)
 
 			tens = minutes / 10;
 			ones = mintues % 10;
-			if (minute < 10)
+			if (minutes < 10)
 				_putchar('0');
 			else
 				_putchar('0' + tens);
