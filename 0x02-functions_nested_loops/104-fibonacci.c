@@ -7,18 +7,32 @@
 int main(void)
 {
 	int i;
-	unsigned long num1 = 1, num2 = 2, temp;
+	unsigned long num_a1 = 1,
+		      num_a2 = 0,
+		      num_b1 = 2,
+		      num_b2 = 0,
+		      THRESHHOLD = 10000000000;
 
 	for (i = 0; i < 98; i++)
 	{
-		if (i == 97)
-			printf("%lu\n", num1);
-		else
-			printf("%lu, ", num1);
+		unsigned long temp;
 
-		temp = num2;
-		num2 += num1;
-		num1 = temp;
+		if (num_a2 > 0)
+			printf("%lu", num_a2);
+		if (i == 97)
+			printf("%lu\n", num_a1);
+		else
+			printf("%lu, ", num_a1);
+
+		temp = num_b1;
+		num_b1 += num_a1;
+		num_a1 = temp;
+
+		num_a2 += num_a1 / THRESHHOLD;
+		num_a1 %= THRESHHOLD;
+
+		num_b2 += num_b1 / THRESHHOLD;
+		num_b1 %= THRESHHOLD;
 	}
 
 	return (0);
