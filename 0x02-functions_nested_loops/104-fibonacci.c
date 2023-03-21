@@ -35,7 +35,6 @@ int main(void)
 		num_a2 += num_a1 / THRESHHOLD;
 		num_a1 %= THRESHHOLD;
 
-		num_a2 = num_b2;
 		num_b2 += num_b1 / THRESHHOLD;
 		num_b1 %= THRESHHOLD;
 	}
