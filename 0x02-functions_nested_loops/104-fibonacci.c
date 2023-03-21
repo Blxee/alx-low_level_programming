@@ -19,7 +19,7 @@ int main(void)
 
 		if (num_a2 > 0)
 			printf("%lu", num_a2);
-		if (i == 60 || i == 91)
+		if (i == 59 || i == 90)
 			printf("0");
 		if (i == 97)
 			printf("%lu\n", num_a1);
