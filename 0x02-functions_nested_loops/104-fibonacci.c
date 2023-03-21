@@ -28,9 +28,14 @@ int main(void)
 		num_b1 += num_a1;
 		num_a1 = temp;
 
+		temp = num_b2;
+		num_b2 += num_a2;
+		num_a2 = temp;
+
 		num_a2 += num_a1 / THRESHHOLD;
 		num_a1 %= THRESHHOLD;
 
+		num_a2 = num_b2;
 		num_b2 += num_b1 / THRESHHOLD;
 		num_b1 %= THRESHHOLD;
 	}
