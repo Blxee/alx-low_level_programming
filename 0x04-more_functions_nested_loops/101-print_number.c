@@ -7,7 +7,7 @@
 
 void print_number(int n)
 {
-	int max = 10;
+	unsigned int max = 10;
 
 	if (n < 0)
 	{
