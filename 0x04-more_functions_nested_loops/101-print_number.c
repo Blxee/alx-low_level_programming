@@ -7,24 +7,15 @@
 
 void print_number(int n)
 {
-	unsigned int max = 10;
+	unsigned int x;
 
+	x = n;
 	if (n < 0)
 	{
-		_putchar('-');
-		n = -n;
+		_putchar(45);
+		x = -n;
 	}
-
-	while (n / max)
-		max *= 10;
-
-	max /= 10;
-
-	while (max)
-	{
-		int digit = n / max % 10;
-
-		max /= 10;
-		_putchar('0' + digit);
-	}
+	if (x / 10)
+		print_number(x / 10);
+	_putchar((x % 10) + '0');
 }
