@@ -7,7 +7,7 @@
 
 void print_number(int n)
 {
-	int max = 1000000000, printing = 0, digit;
+	int printing = 0, digit;
 
 	if (n == 0)
 		_putchar('0');
@@ -19,7 +19,7 @@ void print_number(int n)
 
 	while (max)
 	{
-		digit = n / max % 10;
+		digit = n / 1000000000 % 10;
 		if (digit > 0)
 			printing = 1;
 		if (printing)
