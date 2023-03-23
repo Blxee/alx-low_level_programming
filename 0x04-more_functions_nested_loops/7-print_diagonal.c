@@ -1,4 +1,4 @@
-#incllude "main.h"
+#include "main.h"
 
 /**
  * print_diagonal - Prints a diagonal line in the terminal
