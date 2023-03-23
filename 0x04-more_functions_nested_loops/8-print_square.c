@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * print_square - Draws a square in the terminal using hashtags #
+ * print_square - Draws a square in the terminal using hash symbol #
  * @size: The size of the square
  */
 
 void print_square(int size)
 {
-	int i;
+	int i, j;
 
 	if (size <= 0)
 	{
@@ -15,9 +15,9 @@ void print_square(int size)
 		return;
 	}
 
-	while (size--)
+	for (i = 0; i < size; i++)
 	{
-		for (i = 0; i < size + 1; i++)
+		for (j = 0; j < size; j++)
 			_putchar('#');
 		_putchar('\n');
 	}
