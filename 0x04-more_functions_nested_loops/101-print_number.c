@@ -7,26 +7,24 @@
 
 void print_number(int n)
 {
-	int max = 1000000000, printing = 0, digit;
+	int max = 10;
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
-	else if (n < 0)
+	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
 
+	while (n / max)
+		max *= 10;
+
+	max /= 10;
+
 	while (max)
 	{
-		digit = n / max % 10;
-		if (digit > 0)
-			printing = 1;
-		if (printing)
-			_putchar('0' + digit);
+		int digit = n / max % 10;
+
 		max /= 10;
+		_putchar('0' + digit);
 	}
 }
