@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-long get_prime(long);
-
 /**
  * main - Print the larget prime factor of 612852475143
  * Return: Always 0 (success)
@@ -9,9 +7,11 @@ long get_prime(long);
 
 int main(void)
 {
-	unsigned long num = 612852475143, i, factor;
+	unsigned long original = 612852475143, num, i, factor;
 
-	for (i = 3; i * i <= num; i += 2)
+	num = original;
+
+	for (i = 3; (i * i) <= original; i += 2)
 		while (num % i == 0)
 		{
 			num /= i;
