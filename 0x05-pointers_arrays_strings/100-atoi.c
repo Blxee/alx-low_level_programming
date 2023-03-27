@@ -28,7 +28,7 @@ int _atoi(char *s)
 		{
 			if (started)
 				break;
-			if (*s != '+' && *s != '-')
+			if (*s != '+' && *s != '-' && *s != ' ')
 				sign = 1;
 		}
 
