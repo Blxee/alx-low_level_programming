@@ -1,4 +1,5 @@
 #include "main.h"
+#include "2-strlen.c"
 
 /**
  * puts_half - Prints second half of a string of chars followed by a new line
@@ -12,23 +13,7 @@ void puts_half(char *str)
 	len = _strlen(str);
 	hlen = (len + 1) / 2;
 
-	for (i = len - hlen - 1; i < len; i++)
+	for (i = len - hlen; i < len; i++)
 		_putchar(str[i]);
 	_putchar('\n');
-}
-
-/**
- * _strlen - Determine the length of a string
- * @s: the address of the first character of a string
- * Return: The length of the string
- */
-
-int _strlen(char *s)
-{
-	int len = 0;
-
-	while (*(s + len) != '\0')
-		len++;
-
-	return (len);
 }
