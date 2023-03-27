@@ -11,4 +11,4 @@ void rev_string(char *s);
 void puts2(char *str);
 void puts_half(char *str);
 
-#endif // !_MAIN_H_
+#endif /* !_MAIN_H_ */
