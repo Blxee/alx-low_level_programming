@@ -9,8 +9,8 @@
 int _atoi(char *s)
 {
 	int started = 0,
-			sign = 1,
-			result = 0;
+	    sign = 1;
+	long result = 0;
 
 	while (*s != '\0')
 	{
@@ -26,7 +26,7 @@ int _atoi(char *s)
 		}
 		else if (started)
 		{
-				break;
+			break;
 		}
 
 		s++;
