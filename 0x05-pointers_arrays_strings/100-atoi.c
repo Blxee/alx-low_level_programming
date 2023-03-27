@@ -11,7 +11,7 @@ int _atoi(char *s)
 	int started = 0,
 	    result = 1;
 
-	while (*s != '\0')
+	while (*s++ != '\0')
 	{
 
 		if (*s == '-')
@@ -22,7 +22,7 @@ int _atoi(char *s)
 			if (started)
 			{
 				result *= 10;
-				result += *s - '0';
+				result += (*s - '0') * (result < 0 ? -1 : 1);
 			}
 			else
 			{
@@ -34,8 +34,6 @@ int _atoi(char *s)
 		{
 			break;
 		}
-
-		s++;
 	}
 
 	if (started)
