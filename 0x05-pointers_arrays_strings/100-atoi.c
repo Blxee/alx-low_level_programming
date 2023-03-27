@@ -20,8 +20,14 @@ int _atoi(char *s)
 		if (*s >= '0' && *s <= '9')
 		{
 			if (started)
+			{
 				result *= 10;
-			result += *s - '0';
+				result += *s - '0';
+			}
+			else
+			{
+				result *= *s - '0';
+			}
 			started = 1;
 		}
 		else if (started)
