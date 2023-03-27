@@ -10,7 +10,7 @@ int _atoi(char *s)
 {
 	int started = 0,
 	    sign = 1;
-	unsigned int result = 0;
+	int result = 0;
 
 	while (*s != '\0')
 	{
@@ -31,6 +31,9 @@ int _atoi(char *s)
 
 		s++;
 	}
+
+	if (result == -2147483648)
+		return (result);
 
 	return ((signed int)result * sign);
 }
