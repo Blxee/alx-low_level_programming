@@ -24,12 +24,9 @@ int _atoi(char *s)
 			result += *s - '0';
 			started = 1;
 		}
-		else
+		else if (started)
 		{
-			if (started)
 				break;
-			if (*s != '+' && *s != '-' && *s != ' ')
-				sign = 1;
 		}
 
 		s++;
