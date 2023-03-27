@@ -13,9 +13,10 @@ int main(void)
 
 	srand(time(NULL));
 
-	for (sum = 0; sum <= 2645; sum += c)
+	for (sum = 0; sum <= 2645;)
 	{
 		c = rand() % 128;
+		sum += c;
 		putchar(c);
 	}
 
