@@ -9,18 +9,18 @@
 int _atoi(char *s)
 {
 	int started = 0,
-	    sign = 1;
-	int result = 0;
+	    result = 1;
 
 	while (*s != '\0')
 	{
 
 		if (*s == '-')
-			sign *= -1;
+			result *= -1;
 
 		if (*s >= '0' && *s <= '9')
 		{
-			result *= 10;
+			if (started)
+				result *= 10;
 			result += *s - '0';
 			started = 1;
 		}
@@ -32,8 +32,5 @@ int _atoi(char *s)
 		s++;
 	}
 
-	if (result == -2147483648)
-		return (result);
-
-	return ((signed int)result * sign);
+	return (result);
 }
