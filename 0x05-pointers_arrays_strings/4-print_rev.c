@@ -7,12 +7,13 @@
 
 void print_rev(char *s)
 {
-        if  (*s != '\0') {
-                print_rev(++s);
-                _putchar(*s);
-        }
-        else
-        {
-                _putchar('\n');
-        }
+	if  (*s != '\0')
+	{
+		print_rev(++s);
+		_putchar(*s);
+	}
+	else
+	{
+		_putchar('\n');
+	}
 }
