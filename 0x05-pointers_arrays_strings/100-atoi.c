@@ -10,7 +10,7 @@ int _atoi(char *s)
 {
 	int started = 0,
 	    sign = 1;
-	long result = 0;
+	unsigned int result = 0;
 
 	while (*s != '\0')
 	{
@@ -32,5 +32,5 @@ int _atoi(char *s)
 		s++;
 	}
 
-	return (result * sign);
+	return ((signed int)result * sign);
 }
