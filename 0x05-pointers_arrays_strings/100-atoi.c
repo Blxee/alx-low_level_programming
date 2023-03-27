@@ -27,8 +27,8 @@ int _atoi(char *s)
 			else
 			{
 				result *= *s - '0';
+				started = 1;
 			}
-			started = 1;
 		}
 		else if (started)
 		{
