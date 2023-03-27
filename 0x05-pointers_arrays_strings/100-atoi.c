@@ -38,5 +38,8 @@ int _atoi(char *s)
 		s++;
 	}
 
-	return (result);
+	if (started)
+		return (result);
+	else
+		return (0);
 }
