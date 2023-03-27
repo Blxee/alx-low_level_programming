@@ -1,4 +1,5 @@
 #include "main.h"
+#include "2-strlen.c"
 
 /**
  * print_rev - Prints a string of chars in reverse to stdout
@@ -7,13 +8,9 @@
 
 void print_rev(char *s)
 {
-	if  (*s != '\0')
-	{
-		print_rev(s + 1);
-		_putchar(*s);
-	}
-	else
-	{
-		_putchar('\n');
-	}
+	int i;
+
+	for (i = _strlen(s) - 1; i >= 0; i--)
+		_putchar(s[i]);
+	_putchar('\n');
 }
