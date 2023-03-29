@@ -18,16 +18,9 @@ char *cap_string(char *s)
 			s[i] = 'A' + s[i] - 'a';
 			word_fnd = 1;
 		}
-		else if (s[i] >= 'A' && s[i] <= 'Z')
+		else if (!word_fnd && s[i] >= 'A' && s[i] <= 'Z')
 		{
-			if (word_fnd)
-			{
-				s[i] = 'a' + s[i] - 'A';
-			}
-			else
-			{
-				word_fnd = 1;
-			}
+			word_fnd = 1;
 		}
 		else
 		{
@@ -38,4 +31,19 @@ char *cap_string(char *s)
 	}
 
 	return (s);
+}
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    char str[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\nhello world! hello-world 0123456hello world\thello world.hello world\n";
+    char *ptr;
+
+    ptr = cap_string(str);
+    printf("%s", ptr);
+    printf("%s", str);
+    return (0);
 }
