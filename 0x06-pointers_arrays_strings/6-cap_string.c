@@ -9,28 +9,30 @@
 char *cap_string(char *s)
 {
 	char sep[14] = " \t\n,;.!?\"(){}";
-	int i, j, sent_fnd = 0, word_fnd = 0;
+	int i, j, word_fnd = 0;
 
 	for (i = 0; s[i]; i++)
 	{
+		int jump = 0;
+
 		for (j = 0; sep[j]; j++)
 			if (s[i] == sep[j])
 			{
-				sent_fnd = 0;
 				word_fnd = 0;
-				continue;
+				jump = 1;
+				break;
 			}
 
-		if (s[i] >= 'a' && s[i] <= 'z')
+		if (jump)
 		{
-			if (!word_fnd)
-			{
-				s[i] = 'A' + s[i] - 'a';
-				word_fnd = 1;
-			}
+			jump = 0;
+			continue;
 		}
-		else if (!(s[i] >= 'A' && s[i] <= 'Z'))
+
+		if (!word_fnd)
 		{
+			if (s[i] >= 'a' && s[i] <= 'z')
+				s[i] = 'A' + s[i] - 'a';
 			word_fnd = 1;
 		}
 	}
