@@ -4,10 +4,11 @@
  * _strcat - Concatenates two strings
  * @dest: the first string
  * @src: the second string
+ * @n: the length to concatenate
  * Return: The pointer to @dest
  */
 
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	int i = 0, dest_len;
 
@@ -16,12 +17,13 @@ char *_strcat(char *dest, char *src)
 
 	dest_len = i;
 
-	while (src[i - dest_len] != '\0')
+	while (src[i - dest_len] != '\0' && (i - dest_len) < n)
 	{
 		dest[i] = src[i - dest_len];
 		i++;
 	}
 	dest[i] = '\0';
+
 
 	return (dest);
 }
