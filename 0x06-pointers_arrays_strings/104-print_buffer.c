@@ -32,7 +32,7 @@ void print_buffer(char *b, int size)
 		for (j = 0; j < 0xa; j++)
 		{
 			if (i + j >= size)
-				break;
+				printf(" ");
 			else if (b[j] >= 0x20 && b[j] <= 0x7e)
 				printf("%c", b[j]);
 			else
