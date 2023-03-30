@@ -36,7 +36,7 @@ void print_buffer(char *b, int size)
 				printf("\n");
 				return;
 			}
-			else if (isprint(b[j]))
+			else if (b[j] >= 0x20 && b[j] <= 0x7f)
 				printf("%c", b[j]);
 			else
 				printf(".");
