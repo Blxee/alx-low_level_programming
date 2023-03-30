@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <ctype.h>
 
 /**
  * print_buffer - Prints a buffer in hexadecimal to stdout
@@ -17,27 +18,30 @@ void print_buffer(char *b, int size)
 		return;
 	}
 
-	for (i = 0; i < size; i += 0xa, b += 0xa)
+	for (i = 0; i < size; i += 0xa)
 	{
 		printf("%08x: ", i);
 
-		for (j = 0; j < 0xa; j += 2)
-		{
-			if (i + j >= size)
-				printf("     ");
-			else
-				printf("%02x%02x ", b[j], b[j + 1]);
-		}
-
 		for (j = 0; j < 0xa; j++)
 		{
-			if (i + j >= size)
+			if ((j + i) >= size)
+				printf("  ");
+			else
+				printf("%02x", *(b + j + i));
+			if ((j % 2) != 0 && j != 0)
 				printf(" ");
-			else if (b[j] >= 0x20 && b[j] <= 0x7e)
-				printf("%c", b[j]);
+		}
+		for (j = 0; j < 0xa; j++)
+		{
+			if ((j + i) >= size)
+				break;
+			else if (isprint(b[i + j]))
+				printf("%c", b[i + j]);
 			else
 				printf(".");
 		}
+		if (i >= size)
+			continue;
 		printf("\n");
 	}
 }
