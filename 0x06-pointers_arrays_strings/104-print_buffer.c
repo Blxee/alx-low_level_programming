@@ -38,8 +38,6 @@ void print_buffer(char *b, int size)
 			else
 				printf(".");
 		}
-		if (i >= size)
-			continue;
 		printf("\n");
 	}
 }
