@@ -32,7 +32,10 @@ void print_buffer(char *b, int size)
 		for (j = 0; j < 0xa; j++)
 		{
 			if (i + j >= size)
-				printf(" ");
+			{
+				printf("\n");
+				return;
+			}
 			else if (isprint(b[j]))
 				printf("%c", b[j]);
 			else
