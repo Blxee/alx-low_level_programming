@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include <ctype.h>
 
 /**
  * print_buffer - Prints a buffer in hexadecimal to stdout
@@ -38,7 +37,7 @@ void print_buffer(char *b, int size)
 		{
 			if (i + j >= size)
 				break;
-			else if (isprint(b[j]))
+			else if (b[j] >= 0x20 && b[j] <= 0x7e)
 				printf("%c", b[j]);
 			else
 				printf(".");
