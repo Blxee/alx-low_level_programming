@@ -13,7 +13,10 @@ void print_buffer(char *b, int size)
 	int i, j;
 
 	if (size <= 0)
+	{
 		printf("\n");
+		return;
+	}
 
 	for (i = 0; i < size; i += 0xa, b += 0xa)
 	{
