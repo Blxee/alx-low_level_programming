@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include <ctype.h>
 
 /**
  * print_buffer - Prints a buffer in hexadecimal to stdout
