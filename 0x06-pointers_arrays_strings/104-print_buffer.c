@@ -12,6 +12,12 @@ void print_buffer(char *b, int size)
 {
 	int i, j;
 
+	if (size <= 0)
+	{
+		printf("\n");
+		return;
+	}
+
 	for (i = 0; i < size; i += 0xa, b += 0xa)
 	{
 		printf("%08x: ", i);
@@ -30,8 +36,11 @@ void print_buffer(char *b, int size)
 		{
 			if (i + j >= size)
 			{
-				printf("\n");
-				return;
+				/*
+				 * printf("\n");
+				 *return;
+				 */
+				printf(" ");
 			}
 			else if (isprint(b[j]))
 				printf("%c", b[j]);
