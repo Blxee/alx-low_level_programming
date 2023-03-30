@@ -36,11 +36,8 @@ void print_buffer(char *b, int size)
 		{
 			if (i + j >= size)
 			{
-				/*
-				 * printf("\n");
-				 *return;
-				 */
-				printf(" ");
+				printf("\n");
+				return;
 			}
 			else if (isprint(b[j]))
 				printf("%c", b[j]);
