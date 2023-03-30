@@ -24,15 +24,11 @@ void print_buffer(char *b, int size)
 		for (j = 0; j < 0xa; j += 2)
 		{
 			if (i + j >= size)
-			{
 				printf("     ");
-			}
 			else
-			{
-				printf("%02x", b[j]);
-				printf("%02x ", b[j + 1]);
-			}
+				printf("%02x%02x ", b[j], b[j + 1]);
 		}
+
 		for (j = 0; j < 0xa; j++)
 		{
 			if (i + j >= size)
@@ -44,4 +40,15 @@ void print_buffer(char *b, int size)
 		}
 		printf("\n");
 	}
+}
+
+
+int main(void)
+{
+    char buffer[] = "This is a string!\0And this is the rest of the #buffer :)\1\2\3\4\5\6\7#cisfun\n\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x20\x21\x34\x56#pointersarefun #infernumisfun\n";
+
+    printf("%s\n", buffer);
+    printf("---------------------------------\n");
+    print_buffer(buffer, sizeof(buffer));
+    return (0);
 }
