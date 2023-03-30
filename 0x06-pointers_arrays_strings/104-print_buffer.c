@@ -27,18 +27,17 @@ void print_buffer(char *b, int size)
 			if (i + j >= size)
 			{
 				printf("     ");
-				continue;
 			}
-			printf("%02x", b[j]);
-			printf("%02x ", b[j + 1]);
+			else
+			{
+				printf("%02x", b[j]);
+				printf("%02x ", b[j + 1]);
+			}
 		}
 		for (j = 0; j < 0xa; j++)
 		{
 			if (i + j >= size)
-			{
-				printf("\n");
-				return;
-			}
+				break;
 			else if (isprint(b[j]))
 				printf("%c", b[j]);
 			else
