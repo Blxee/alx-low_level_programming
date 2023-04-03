@@ -5,14 +5,16 @@
  * @s: the string to search
  * @c: the character to search for
  * Return:
- *  A pointed to char if found
+ *  A pointer to char if found
  *  NULL elsewise
  */
 
 char *_strchr(char *s, char c)
 {
-	for (; *s; s++)
-		if (*s == c)
-			return (s);
+	char *chr;
+
+	for (chr = s; *chr; chr++)
+		if (*chr == c)
+			return (chr);
 	return (NULL);
 }
