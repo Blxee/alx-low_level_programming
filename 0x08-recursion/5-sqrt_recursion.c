@@ -12,7 +12,7 @@ int _sqrt_recursion(int n)
 {
 	if (n < 0)
 		return (-1);
-	return (_inner_sqrt(n, n / 2 + 1));
+	return (_inner_sqrt(n, 0));
 }
 
 /**
@@ -28,7 +28,7 @@ int _inner_sqrt(unsigned long n, unsigned long m)
 {
 	if (m * m == n)
 		return (m);
-	if (m == 0)
+	if (m == n / 2 + 1)
 		return (-1);
-	return (_inner_sqrt(n, m - 1));
+	return (_inner_sqrt(n, m + 1));
 }
