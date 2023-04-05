@@ -26,7 +26,9 @@ int _sqrt_recursion(int n)
 
 int _inner_sqrt(int n, int m)
 {
-	if (m * m == n)
+	unsigned long l = m * m;
+
+	if (l == n)
 		return (m);
 	if (m == 0)
 		return (-1);
