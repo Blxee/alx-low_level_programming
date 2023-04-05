@@ -24,11 +24,9 @@ int _sqrt_recursion(int n)
  *	-1 if the number has no square root or it is float number
  */
 
-int _inner_sqrt(int n, int m)
+int _inner_sqrt(unsigned long n, unsigned long m)
 {
-	long l = m * m;
-
-	if (l == n)
+	if (m * m == n)
 		return (m);
 	if (m == 0)
 		return (-1);
