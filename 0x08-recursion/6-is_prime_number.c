@@ -10,10 +10,8 @@
 
 int is_prime_number(int n)
 {
-	if (n == 0 || n == 1)
-		return (1);
-	if (n < 0)
-		n = -n;
+	if (n <= 1)
+		return (-1);
 	return (_is_prime_number(n, n - 1));
 }
 
