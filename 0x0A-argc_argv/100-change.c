@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	int *coin = coins;
 	int change, min;
 
-	if (argc <= 2)
+	if (argc != 2)
 	{
 		puts("Error");
 		return (EXIT_FAILURE);
