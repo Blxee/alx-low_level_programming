@@ -25,14 +25,18 @@ int main(int argc, char *argv[])
 	change = atoi(*++argv);
 	min = 0;
 
-	while (change)
-		if (change >= *coin)
-		{
-			min++;
-			change -= *coin;
-		}
-		else
-			coin++;
+	if (change > 0)
+	{
+
+		while (change)
+			if (change >= *coin)
+			{
+				min++;
+				change -= *coin;
+			}
+			else
+				coin++;
+	}
 
 	printf("%d\n", min);
 	return (EXIT_SUCCESS);
