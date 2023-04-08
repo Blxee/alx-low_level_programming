@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
 {
 	int sum = 0;
 
+	(void)argc;
+
 	while (*++argv)
 	{
 		if (!is_num(*argv))
