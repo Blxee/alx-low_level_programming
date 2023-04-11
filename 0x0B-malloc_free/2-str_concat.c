@@ -12,8 +12,16 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	char *p = malloc(strlen(s1) * strlen(s2) * sizeof(char) + 1);
-	unsigned int i = 0;
+	char *p;
+	unsigned int len1, len2, i;
+
+	len1 = s1 ? strlen(s1) : 0;
+	len2 = s2 ? strlen(s2) : 0;
+	p = malloc(len1 * len2 * sizeof(char) + 1);
+	i = 0;
+
+	if (!p)
+		return (NULL);
 
 	for (; *s1; i++, s1++)
 		p[i] = *s1;
