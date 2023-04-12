@@ -20,7 +20,7 @@ char **strtow(char *str)
 		return (NULL);
 	while (*str == ' ')
 		str++;
-	len = 1 + word_count(str);
+	len = word_count(str);
 	arr = malloc(len * sizeof(char *));
 	if (!arr)
 		return (NULL);
@@ -43,7 +43,6 @@ char **strtow(char *str)
 		arr[i][j] = '\0';
 		str = word;
 	}
-	arr[i] = NULL;
 	return (arr);
 }
 
