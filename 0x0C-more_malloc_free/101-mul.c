@@ -72,6 +72,7 @@ void mult(char *result, char *num1, char *num2, int len1, int len2, int len3)
 		if (!(digit1 >= 0 && digit1 <= 9))
 		{
 			puts("Error");
+			free(result);
 			exit(98);
 		}
 
@@ -90,6 +91,7 @@ void mult(char *result, char *num1, char *num2, int len1, int len2, int len3)
 			if (!(digit2 >= 0 && digit2 <= 9))
 			{
 				puts("Error");
+				free(result);
 				exit(98);
 			}
 
