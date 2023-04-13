@@ -20,22 +20,17 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
+exit_label:
 		printf("Error\n");
 		return (98);
 	}
 
 	for (i = 0; num1[i]; i++)
 		if (!(num1[i] >= '0' && num1[i] <= '9'))
-		{
-			printf("Error\n");
-			return (98);
-		}
+			goto exit_label;
 	for (i = 0; num2[i]; i++)
 		if (!(num2[i] >= '0' && num2[i] <= '9'))
-		{
-			printf("Error\n");
-			return (98);
-		}
+			goto exit_label;
 
 	len1 = strlen(num1);
 	len2 = strlen(num2);
