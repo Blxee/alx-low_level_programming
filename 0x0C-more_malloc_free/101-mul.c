@@ -28,9 +28,9 @@ int main(int argc, char *argv[])
 	num2 = argv[2];
 	len1 = strlen(num1);
 	len2 = strlen(num2);
-	len3 = len1 + len2 + 1;
+	len3 = len1 + len2;
 
-	result = malloc((len3) * sizeof(*result));
+	result = malloc((len3 + 1) * sizeof(*result));
 
 	if (!result)
 	{
@@ -38,14 +38,14 @@ int main(int argc, char *argv[])
 		return (98);
 	}
 
-	for (i = 0; i <= len3; i++)
+	for (i = 0; i < len3; i++)
 		result[i] = '0';
 	result[i] = '\0';
 
 	mult(result, num1, num2, len1, len2, len3);
 
-	while (*result == '0' && result[1] != '\0')
-		result++;
+	// while (*result == '0' && result[1] != '\0')
+	// 	result++;
 	puts(result);
 	free(result);
 	return (EXIT_SUCCESS);
@@ -76,7 +76,7 @@ void mult(char *result, char *num1, char *num2, int len1, int len2, int len3)
 			exit(98);
 		}
 
-		for (j = len2 - 1, l = len3 - k, rem = 0; j >= 0 || rem; j--, l--)
+		for (j = len2 - 1, l = len3 - 1 - k, rem = 0; j >= 0 || rem; j--, l--)
 		{
 			if (j < 0)
 			{
