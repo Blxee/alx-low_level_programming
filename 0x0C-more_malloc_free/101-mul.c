@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 
 	mult(result, num1, num2, len1, len2, len3);
 
-	while (*result == '0')
+	while (*result == '0' && result[1] != '\0')
 		result++;
 	puts(result);
 	free(result);
