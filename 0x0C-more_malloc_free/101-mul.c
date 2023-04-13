@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 
 	while (*result == '0' && result[1] != '\0')
 		result++;
-	puts(result);
+	printf("%s\n", result);
 	free(result);
 	return (EXIT_SUCCESS);
 }
