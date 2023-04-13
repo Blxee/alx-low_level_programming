@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		puts("Error");
+		printf("Error\n");
 		return (98);
 	}
 
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 
 	if (!result)
 	{
-		puts("Error");
+		printf("Error\n");
 		return (98);
 	}
 
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 		result++;
 	puts(result);
 	free(result);
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
 /**
@@ -71,7 +71,7 @@ void mult(char *result, char *num1, char *num2, int len1, int len2, int len3)
 
 		if (!(digit1 >= 0 && digit1 <= 9))
 		{
-			puts("Error");
+			printf("Error\n");
 			free(result);
 			exit(98);
 		}
@@ -90,7 +90,7 @@ void mult(char *result, char *num1, char *num2, int len1, int len2, int len3)
 
 			if (!(digit2 >= 0 && digit2 <= 9))
 			{
-				puts("Error");
+				printf("Error\n");
 				free(result);
 				exit(98);
 			}
@@ -101,4 +101,3 @@ void mult(char *result, char *num1, char *num2, int len1, int len2, int len3)
 		}
 	}
 }
-
