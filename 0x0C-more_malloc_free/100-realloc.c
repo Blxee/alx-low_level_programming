@@ -21,17 +21,16 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size != old_size)
 	{
 		char *p = malloc(new_size);
-		unsigned int size, i;
 
 		if (!p)
 			return (NULL);
 
-		size = new_size < old_size ? new_size : old_size;
-
 		if (ptr)
 		{
-			for (i = 0; i < size; i++)
-				p[i] = ((char *)ptr)[i];
+			unsigned int size, i;
+
+			size = new_size < old_size ? new_size : old_size;
+			memcpy(p, ptr, size);
 			free(ptr);
 		}
 
