@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
  * array_range - Creates an array of range of numbers in the heap
