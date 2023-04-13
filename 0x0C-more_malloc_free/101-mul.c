@@ -39,10 +39,7 @@ exit_label:
 	result = malloc((len3 + 1) * sizeof(*result));
 
 	if (!result)
-	{
-		printf("Error\n");
-		return (98);
-	}
+		goto exit_label;
 
 	for (i = 0; i < len3; i++)
 		result[i] = '0';
