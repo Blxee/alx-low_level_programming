@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	len2 = strlen(num2);
 	len3 = len1 + len2 + 1;
 
-	result = malloc((len3 + 1) * sizeof(*result));
+	result = malloc((len3) * sizeof(*result));
 
 	if (!result)
 	{
