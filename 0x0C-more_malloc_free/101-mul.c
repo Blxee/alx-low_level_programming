@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 		result++;
 	puts(result);
 	free(result);
-	return (EXIT_SUCCESS);
+	return (0);
 }
 
 /**
