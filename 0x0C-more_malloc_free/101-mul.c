@@ -16,7 +16,7 @@ void mult(char *result, char *num1, char *num2, int len1, int len2, int len3);
 int main(int argc, char *argv[])
 {
 	int len1, len2, len3, i;
-	char *result, *num1, *num2;
+	char *result, *num1 = argv[1], *num2 = argv[2];
 
 	if (argc != 3)
 	{
@@ -24,8 +24,19 @@ int main(int argc, char *argv[])
 		return (98);
 	}
 
-	num1 = argv[1];
-	num2 = argv[2];
+	for (i = 0; num1[i]; i++)
+		if (!(num1[i] >= '0' && num1[i] <= '9'))
+		{
+			printf("Error\n");
+			return (98);
+		}
+	for (i = 0; num2[i]; i++)
+		if (!(num2[i] >= '0' && num2[i] <= '9'))
+		{
+			printf("Error\n");
+			return (98);
+		}
+
 	len1 = strlen(num1);
 	len2 = strlen(num2);
 	len3 = len1 + len2;
@@ -69,13 +80,6 @@ void mult(char *result, char *num1, char *num2, int len1, int len2, int len3)
 	{
 		digit1 = num1[i] - '0';
 
-		if (!(digit1 >= 0 && digit1 <= 9))
-		{
-			printf("Error\n");
-			free(result);
-			exit(98);
-		}
-
 		for (j = len2 - 1, l = len3 - 1 - k, rem = 0; j >= 0 || rem; j--, l--)
 		{
 			if (j < 0)
@@ -87,13 +91,6 @@ void mult(char *result, char *num1, char *num2, int len1, int len2, int len3)
 			}
 
 			digit2 = num2[j] - '0';
-
-			if (!(digit2 >= 0 && digit2 <= 9))
-			{
-				printf("Error\n");
-				free(result);
-				exit(98);
-			}
 
 			rem += digit1 * digit2 + (result[l] - '0');
 			result[l] = rem % 10 + '0';
