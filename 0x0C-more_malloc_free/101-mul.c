@@ -19,12 +19,7 @@ int main(int argc, char *argv[])
 	char *result, *num1 = argv[1], *num2 = argv[2];
 
 	if (argc != 3)
-	{
-exit_label:
-		printf("Error\n");
-		return (98);
-	}
-
+		goto exit_label;
 	for (i = 0; num1[i]; i++)
 		if (!(num1[i] >= '0' && num1[i] <= '9'))
 			goto exit_label;
@@ -52,6 +47,10 @@ exit_label:
 	printf("%s\n", result);
 	free(result);
 	return (EXIT_SUCCESS);
+
+exit_label:
+	printf("Error\n");
+	return (98);
 }
 
 /**
