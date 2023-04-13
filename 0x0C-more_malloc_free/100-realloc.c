@@ -30,7 +30,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 			unsigned int size, i;
 
 			size = new_size < old_size ? new_size : old_size;
-			memcpy(p, ptr, size);
+			for (i = 0; i < size; i++)
+				p[i] = ((char *)ptr)[i];
 			free(ptr);
 		}
 
