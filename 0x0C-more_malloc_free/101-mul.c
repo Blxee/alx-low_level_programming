@@ -1,8 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "main.h"
 
 void mult(char *result, char *num1, char *num2, int len1, int len2, int len3);
+int _strlen(char *str);
+void _puts(char *str);
 
 /**
  * main - Multiplies two positive numbers, then prints the result
@@ -27,8 +27,8 @@ int main(int argc, char *argv[])
 		if (!(num2[i] >= '0' && num2[i] <= '9'))
 			goto exit_label;
 
-	len1 = strlen(num1);
-	len2 = strlen(num2);
+	len1 = _strlen(num1);
+	len2 = _strlen(num2);
 	len3 = len1 + len2;
 
 	result = malloc((len3 + 1) * sizeof(*result));
@@ -44,12 +44,12 @@ int main(int argc, char *argv[])
 
 	while (*result == '0' && result[1] != '\0')
 		result++;
-	printf("%s\n", result);
+	_puts(result);
 	free(result);
 	return (EXIT_SUCCESS);
 
 exit_label:
-	printf("Error\n");
+	_puts("Error");
 	return (98);
 }
 
@@ -88,4 +88,33 @@ void mult(char *result, char *num1, char *num2, int len1, int len2, int len3)
 			rem /= 10;
 		}
 	}
+}
+
+/**
+ * _strlen - gives length of a string
+ * @str: a string
+ * Return: the length
+ */
+
+int _strlen(char *str)
+{
+	int len;
+
+	for (len = 0; str[len]; len++)
+		;
+	return (len);
+}
+
+/**
+ * _puts - prints string followed be new line
+ * @str: the string to print
+ */
+
+void _puts(char *str)
+{
+	int i;
+
+	for (i = 0; str[i]; i++)
+		_putchar(str[i]);
+	_putchar('\n');
 }
