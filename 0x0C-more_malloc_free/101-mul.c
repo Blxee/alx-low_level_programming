@@ -15,9 +15,13 @@ void _puts(char *str);
 
 int main(int argc, char *argv[])
 {
-	int len1, len2, len3, i;
+	int len1, len2, len3, i, neg = 0;
 	char *result, *num1 = argv[1], *num2 = argv[2];
 
+	if (*num1 == '-')
+		neg = !neg;
+	if (*num2 == '-')
+		neg = !neg;
 	if (argc != 3 || !*num1 || !*num2)
 		goto exit_label;
 	for (i = 0; num1[i]; i++)
@@ -44,6 +48,8 @@ int main(int argc, char *argv[])
 
 	while (*result == '0' && result[1] != '\0')
 		result++;
+	if (neg)
+		_putchar('-');
 	_puts(result);
 	free(result);
 	return (EXIT_SUCCESS);
