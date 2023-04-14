@@ -18,13 +18,8 @@ int main(int argc, char *argv[])
 	int len1, len2, len3, i;
 	char *result, *num1 = argv[1], *num2 = argv[2];
 
-	if (argc != 3)
+	if (argc != 3 || !*num1 || !*num2)
 		goto exit_label;
-	if (!*num1 || !*num2)
-	{
-		printf("0\n");
-		return (EXIT_SUCCESS);
-	}
 	for (i = 0; num1[i]; i++)
 		if (!(num1[i] >= '0' && num1[i] <= '9'))
 			goto exit_label;
