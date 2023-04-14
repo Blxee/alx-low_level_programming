@@ -42,9 +42,10 @@ int main(int argc, char *argv[])
 
 	mult(result, num1, num2, len1, len2, len3);
 
-	while (*result == '0' && result[1] != '\0')
-		result++;
-	_puts(result);
+	i = 0;
+	while (result[i] == '0' && result[i + 1] != '\0')
+		i++;
+	_puts(result + i);
 	free(result);
 	return (EXIT_SUCCESS);
 
