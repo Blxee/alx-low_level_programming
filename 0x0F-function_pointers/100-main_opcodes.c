@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - prints its main function's opcodes followed by a new line
@@ -22,6 +22,13 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
+
+	for (i = 0; argv[1][i]; i++)
+		if (!isdigit(argv[1][i]))
+		{
+			printf("Error\n");
+			return (1);
+		}
 
 	num = atoi(argv[1]);
 
