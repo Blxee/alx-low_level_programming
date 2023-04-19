@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * print_name - calls a print function on a string
  *
