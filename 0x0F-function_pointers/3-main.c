@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 
 	func = get_op_func(argv[2]);
 
-	if (!func)
+	if (!func || argv[2][1])
 	{
 		puts("Error");
 		return (99);
