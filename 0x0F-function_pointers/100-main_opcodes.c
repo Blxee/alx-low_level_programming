@@ -23,13 +23,6 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	for (i = 0; argv[1][i]; i++)
-		if (!isdigit(argv[1][i]))
-		{
-			printf("Error\n");
-			return (1);
-		}
-
 	num = atoi(argv[1]);
 
 	if (num < 0)
@@ -40,7 +33,7 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < num; i++)
 	{
-		printf("%02x", code[i]);
+		printf("%02hhx", code[i]);
 		if (i < num - 1)
 			printf(" ");
 	}
