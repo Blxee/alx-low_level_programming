@@ -1,4 +1,5 @@
 #include "3-calc.h"
+#include <ctype.h>
 
 /**
  * main - perform an operation on two integers, and print the result
@@ -33,7 +34,7 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 
-	if (*argv[2] == '/' && num2 == 0)
+	if ((*argv[2] == '/' || *argv[2] == '%') && num2 == 0)
 	{
 		puts("Error");
 		return (100);
