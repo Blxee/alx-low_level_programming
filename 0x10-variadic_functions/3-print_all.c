@@ -8,18 +8,14 @@
  */
 void print_all(const char * const format, ...)
 {
-	unsigned int n, i;
+	unsigned int i;
 	char *str;
 	va_list va;
-
-	n = 0;
-	while (format && format[n])
-		n++;
 
 	va_start(va, format);
 
 	i = 0;
-	while (i < n)
+	while (format && format[i])
 	{
 		switch (format[i])
 		{
