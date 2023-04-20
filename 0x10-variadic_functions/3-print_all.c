@@ -1,6 +1,5 @@
 #include "variadic_functions.h"
 #include <stdio.h>
-#include <string.h>
 
 /**
  * print_all - prints variable amount of args of different types
@@ -16,6 +15,7 @@ void print_all(const char * const format, ...)
 	n = 0;
 	while (format && format[n])
 		n++;
+
 	va_start(va, format);
 
 	i = 0;
@@ -50,5 +50,6 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	printf("\n");
+
 	va_end(va);
 }
