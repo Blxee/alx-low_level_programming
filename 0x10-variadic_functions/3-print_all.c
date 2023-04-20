@@ -13,11 +13,13 @@ void print_all(const char * const format, ...)
 	char *str;
 	va_list va;
 
-	n = strlen(format);
+	n = 0;
+	while (format && format[n])
+		n++;
 	va_start(va, format);
 
 	i = 0;
-	while (format && i < n)
+	while (i < n)
 	{
 		switch (format[i])
 		{
