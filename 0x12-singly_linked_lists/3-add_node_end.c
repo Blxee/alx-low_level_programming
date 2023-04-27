@@ -1,3 +1,4 @@
+#include <string.h>
 #include "lists.h"
 
 /**
@@ -23,7 +24,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		*tail = (*tail)->next;
 
 	new->str = strdup(str);
-	new->len = 0;
+	new->len = strlen(str);
 	new->next = NULL;
 
 	*tail = new;
