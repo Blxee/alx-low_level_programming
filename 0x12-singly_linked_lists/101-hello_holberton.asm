@@ -1,18 +1,19 @@
 section .data
-    msg db 'Hello, Holberton',0xa  ; the string to be printed, terminated with newline (0xa)
+    fmt db 'Hello, Holberton',0xa,0    ; the format string to be passed to printf
 
 section .text
-    global _start
+    global main
 
-_start:
-    ; write the message to stdout
-    mov eax, 4       ; system call number for write
-    mov ebx, 1       ; file descriptor for stdout
-    mov ecx, msg     ; pointer to the message
-    mov edx, 14      ; message length
-    int 0x80         ; call kernel
+    extern printf              ; declare the printf function from the C library
 
-    ; exit program with status code 0
-    mov eax, 1       ; system call number for exit
-    xor ebx, ebx     ; exit status code 0
-    int 0x80         ; call kernel
+main:
+    push rbp                   ; set up stack frame
+    mov rbp, rsp
+
+    mov rdi, fmt               ; load the address of the format string into the first argument register
+    xor eax, eax               ; clear the second argument register (printf format string is already loaded)
+    call printf                ; call the printf function from the C library
+
+    xor eax, eax               ; set return value to 0
+    pop rbp                    ; restore stack frame
+    ret                        ; return from main function
