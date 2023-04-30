@@ -1,4 +1,5 @@
 #include "lists.h"
+#include "4-free_listint.c"
 
 /**
  * free_listint2 - frees a list from memory
