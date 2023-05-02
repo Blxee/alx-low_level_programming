@@ -11,18 +11,16 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *node;
+	listint_t *slow_p, *fast_p;
 
-	while (head != NULL)
+	slow_p = fast_p = head;
+	while (fast_p && fast_p->next)
 	{
-		node = head->next;
-		while (node != NULL)
-		{
-			if (head == node)
-				return (head);
-			node = node->next;
-		}
-		head = head->next;
+		slow_p = slow_p->next;
+		fast_p = fast_p->next->next;
+
+		if (slow_p == fast_p)
+			return (slow_p);
 	}
 
 	return (NULL);
