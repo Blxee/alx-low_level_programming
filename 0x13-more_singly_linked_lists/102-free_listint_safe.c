@@ -12,6 +12,7 @@ size_t free_listint_safe(listint_t **h)
 {
 	size_t len, i;
 	listint_t **buffer, *head = *h, *next;
+	int broken = 0;
 
 	if (!h || !*h)
 		return (0);
@@ -25,8 +26,12 @@ size_t free_listint_safe(listint_t **h)
 	{
 		for (i = 0; i < len; i++)
 			if (buffer[i] == head)
-				goto label;
-label:
+			{
+				broken = 1;
+				break;
+			}
+		if (broken)
+			break;
 		buffer[len++] = head;
 		next = head->next;
 		free(head);
