@@ -30,7 +30,7 @@ size_t print_listint_safe(const listint_t *head)
 			}
 		if (!buffer)
 			break;
-		printf("[%p]%d\n", head, head->n);
+		printf("[%p] %d\n", (void *)head, head->n);
 		buffer[len++] = head;
 		head = head->next;
 	}
