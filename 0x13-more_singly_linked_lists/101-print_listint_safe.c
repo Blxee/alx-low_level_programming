@@ -14,6 +14,7 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t len, i;
 	const listint_t **buffer;
+	int broken = 0;
 
 	buffer = malloc(1024 * sizeof(listint_t *));
 	if (buffer == NULL)
@@ -26,10 +27,10 @@ size_t print_listint_safe(const listint_t *head)
 			if (buffer[i] == head)
 			{
 				printf("-> [%p] %d\n", (void *)head, head->n);
-				buffer = NULL;
+				broken = 1;
 				break;
 			}
-		if (!buffer)
+		if (broken)
 			break;
 		printf("[%p] %d\n", (void *)head, head->n);
 		buffer[len++] = head;
