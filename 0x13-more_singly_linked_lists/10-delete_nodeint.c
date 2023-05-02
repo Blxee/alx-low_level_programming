@@ -7,8 +7,8 @@
  * @index: the index to remove from the list
  *
  * Return:
- *	the value at the removed node if found
- *	0 elsewise
+ *	1 if the delete was successful
+ *	-1 elsewise
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
@@ -22,7 +22,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	{
 		head = &(*head)->next;
 		if (*head == NULL)
-			return (0);
+			return (-1);
 	}
 
 	node = *head;
