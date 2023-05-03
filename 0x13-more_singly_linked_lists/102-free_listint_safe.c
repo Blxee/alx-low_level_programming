@@ -16,7 +16,7 @@ size_t free_listint_safe(listint_t **h)
 	if (!h || !*h)
 		return (0);
 
-	buffer = malloc(1024 * sizeof(listint_t *));
+	buffer = malloc(2048 * sizeof(listint_t *));
 	if (buffer == NULL)
 		return (0);
 
