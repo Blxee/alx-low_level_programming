@@ -13,13 +13,15 @@ size_t free_listint_safe(listint_t **h)
 	size_t len, i;
 	listint_t **buffer, *head = *h, *next;
 
-	if (!h)
+	if (!h || !*h)
 		return (0);
 
 	buffer = malloc(1024 * sizeof(listint_t *));
+	if (buffer == NULL)
+		return (0);
 
 	len = 0;
-	while (buffer && head)
+	while (head)
 	{
 		for (i = 0; i < len; i++)
 			if (buffer[i] == head)
