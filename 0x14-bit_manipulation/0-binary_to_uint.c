@@ -22,11 +22,15 @@ unsigned int binary_to_uint(const char *b)
 
 	result = 0;
 	pow = 1;
-	for (i = len - 1; i >= 0; i--)
+	i = len - 1;
+	while (1)
 	{
 		if (b[i] == '1')
 			result += pow;
 		pow *= 2;
+		if (i == 0)
+			break;
+		i--;
 	}
 
 	return (result);
