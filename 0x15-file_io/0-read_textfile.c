@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * read_textfile - reads a file and prints it to stdout
@@ -16,7 +17,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int file_no;
 	ssize_t chars_read, chars_written;
 
-	if (!filename || !letters)
+	buf = malloc(letters * sizeof(char));
+
+	if (!filename || !letters || !buf)
 		return (0);
 
 	file_no = open(filename, O_RDONLY);
