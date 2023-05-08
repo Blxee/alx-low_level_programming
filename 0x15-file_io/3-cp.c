@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "main.h"
 
 #ifdef BUF_SIZE
 #undef BUF_SIZE
@@ -61,10 +62,8 @@ void open_files(int *files, const char *f1, const char *f2)
 int main(int argc, char *argv[])
 {
 	int files[2];
-	char *buf;
+	char buf[BUF_SIZE];
 	int chars_len;
-
-	buf = malloc(BUF_SIZE * sizeof(char));
 
 	if (argc != 3)
 	{
