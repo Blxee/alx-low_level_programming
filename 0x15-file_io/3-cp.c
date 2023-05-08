@@ -72,7 +72,6 @@ int main(int argc, char *argv[])
 	open_files(files, argv[1], argv[2]);
 	do {
 		chars_len = read(files[0], buf, BUF_SIZE);
-
 		if (chars_len == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -89,5 +88,8 @@ int main(int argc, char *argv[])
 			return (99);
 		}
 	} while (chars_len == BUF_SIZE);
+
+	try_close(files[0]);
+	try_close(files[1]);
 	return (0);
 }
