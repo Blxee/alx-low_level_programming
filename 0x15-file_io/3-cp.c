@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 {
 	int f1_no, f2_no;
 	char buf[BUF_SIZE];
-	unsigned int chars_len;
+	int chars_len;
 
 	if (argc != 3)
 	{
