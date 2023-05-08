@@ -61,8 +61,10 @@ void open_files(int *files, const char *f1, const char *f2)
 int main(int argc, char *argv[])
 {
 	int files[2];
-	char buf[BUF_SIZE];
+	char *buf;
 	int chars_len;
+
+	buf = malloc(BUF_SIZE * sizeof(char));
 
 	if (argc != 3)
 	{
