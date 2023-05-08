@@ -2,11 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#ifdef BUF_SIZE
-#undef BUF_SIZE
-#endif /* !BUF_SIZE */
-#define BUF_SIZE 1024
-
 /**
  * try_close - tries to close a file descriptor
  *
@@ -61,7 +56,7 @@ void open_files(int *files, const char *f1, const char *f2)
 int main(int argc, char *argv[])
 {
 	int files[2];
-	char buf[BUF_SIZE];
+	char buf[1024];
 	int chars_len;
 
 	if (argc != 3)
@@ -71,7 +66,7 @@ int main(int argc, char *argv[])
 	}
 	open_files(files, argv[1], argv[2]);
 	do {
-		chars_len = read(files[0], buf, BUF_SIZE);
+		chars_len = read(files[0], buf, 1024);
 
 		if (chars_len == -1)
 		{
@@ -88,6 +83,6 @@ int main(int argc, char *argv[])
 			try_close(files[1]);
 			return (99);
 		}
-	} while (chars_len == BUF_SIZE);
+	} while (chars_len == 1024);
 	return (0);
 }
