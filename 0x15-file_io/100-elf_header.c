@@ -47,7 +47,7 @@ void show_magic(unsigned char *ident)
 void show_class(unsigned char *ident)
 {
 	printf("  Class:                             ");
-
+	(void)ident;
 }
 
 /**
@@ -58,7 +58,7 @@ void show_class(unsigned char *ident)
 void show_data(unsigned char *ident)
 {
 	printf("  Data:                              ");
-
+	(void)ident;
 }
 
 /**
@@ -69,7 +69,7 @@ void show_data(unsigned char *ident)
 void show_version(unsigned char *ident)
 {
 	printf("  Version:                           ");
-
+	(void)ident;
 }
 
 /**
@@ -80,7 +80,7 @@ void show_version(unsigned char *ident)
 void show_OS_ABI(unsigned char *ident)
 {
 	printf("  OS/ABI:                            ");
-
+	(void)ident;
 }
 
 /**
@@ -102,7 +102,7 @@ void show_ABI_version(unsigned char *ident)
 void show_type(unsigned char *ident)
 {
 	printf("  Type:                              ");
-
+	(void)ident;
 }
 
 /**
@@ -113,6 +113,7 @@ void show_type(unsigned char *ident)
 void show_entry_address(unsigned char *ident)
 {
 	printf("  Entry point address:               ");
+	(void)ident;
 }
 
 /**
