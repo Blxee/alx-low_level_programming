@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <elf.h>
+#include "main.h"
 
 /**
  * is_elf_file - determines whether the file is elf format
