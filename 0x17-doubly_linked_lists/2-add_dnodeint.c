@@ -21,8 +21,8 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 		(*head) = (*head)->prev;
 	}
 
-	(*head) = malloc(sizeof(**head));
-	if ((*head) == NULL)
+	*head = malloc(sizeof(dlistint_t));
+	if (*head == NULL)
 		return (NULL);
 
 	(*head)->prev = NULL;
