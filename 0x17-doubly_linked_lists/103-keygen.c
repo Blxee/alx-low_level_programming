@@ -9,8 +9,9 @@ unsigned long f1(int arg1)
 
 unsigned long f2(char* arg1, int arg2)
 {
-    int var_10 = 0;
-    for (int var_c = 0; var_c < arg2; var_c = (var_c + 1))
+    int var_10 = 0, var_c;
+
+    for (var_c = 0; var_c < arg2; var_c = (var_c + 1))
     {
         var_10 = (var_10 + *(arg1 + var_c));
     }
@@ -19,8 +20,9 @@ unsigned long f2(char* arg1, int arg2)
 
 unsigned long f3(char* arg1, int arg2)
 {
-    int var_10 = 1;
-    for (int var_c = 0; var_c < arg2; var_c = (var_c + 1))
+    int var_10 = 1, var_c;
+
+    for (var_c = 0; var_c < arg2; var_c = (var_c + 1))
     {
         var_10 = (*(arg1 + var_c) * var_10);
     }
@@ -29,8 +31,8 @@ unsigned long f3(char* arg1, int arg2)
 
 unsigned long f4(char* arg1, int arg2)
 {
-    int var_10 = *arg1;
-    for (int var_c = 0; var_c < arg2; var_c = (var_c + 1))
+    int var_10 = *arg1, var_c;
+    for (var_c = 0; var_c < arg2; var_c = (var_c + 1))
     {
         if (arg1[var_c] > var_10)
         {
@@ -43,24 +45,24 @@ unsigned long f4(char* arg1, int arg2)
 
 unsigned long f5(char* arg1, int arg2)
 {
-    int var_10 = 0;
-    for (int var_c = 0; var_c < arg2; var_c = (var_c + 1))
+    int var_10 = 0, var_c, rax_12;
+
+    for (var_c = 0; var_c < arg2; var_c = (var_c + 1))
     {
         var_10 = (var_10 + (*(arg1 + var_c) * *(arg1 + var_c)));
     }
-    int rax_12;
     rax_12 = (var_10 ^ 0xef);
     return (rax_12 & 0x3f);
 }
 
 unsigned long f6(char arg1)
 {
-    int var_10 = 0;
-    for (int var_c = 0; arg1 > var_c; var_c = (var_c + 1))
+    int var_10 = 0, var_c, rax_3;
+
+    for (var_c = 0; arg1 > var_c; var_c = (var_c + 1))
     {
         var_10 = rand();
     }
-    int rax_3;
     rax_3 = (var_10 ^ 0xe5);
     return (rax_3 & 0x3f);
 }
@@ -72,6 +74,7 @@ int main(int argc, char *argv[])
   char *user = argv[1];
   int len = strlen(user);
 
+    (void)argc;
   pwd[0] = magic_str[f1(len)];
   pwd[1] = magic_str[f2(user, len)];
   pwd[2] = magic_str[f3(user, len)];
