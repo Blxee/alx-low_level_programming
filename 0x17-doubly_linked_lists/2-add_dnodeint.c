@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_dnodeint - prepentds a new elements at the end of a double linked list
+ * add_dnodeint - prepends a new elements at the end of a double linked list
  *
  * @head: the address of head of the list
  * @n: the new element value
@@ -10,10 +10,11 @@
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t *next = NULL;
+	dlistint_t *h, *next = NULL;
 
 	if (head == NULL)
 		return (NULL);
+	h = *head;
 
 	while ((*head) != NULL)
 	{
@@ -28,6 +29,8 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	(*head)->prev = NULL;
 	(*head)->n = n;
 	(*head)->next = next;
+
+	*head = h;
 
 	return (*head);
 }
