@@ -135,7 +135,7 @@ void shash_table_print(const shash_table_t *ht)
 	{
 	  if (node != ht->shead)
 	    printf(", ");
-		printf("%s: %s\n", node->key, node->value);
+		printf("'%s': '%s'", node->key, node->value);
 		node = node->snext;
 	}
 	printf("}\n");
@@ -163,7 +163,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 	{
 	  if (node != ht->stail)
 	    printf(", ");
-		printf("%s: %s\n", node->key, node->value);
+		printf("'%s': '%s'", node->key, node->value);
 		node = node->sprev;
 	}
 	printf("}\n");
