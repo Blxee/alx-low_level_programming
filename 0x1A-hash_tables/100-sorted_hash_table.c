@@ -45,7 +45,7 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-	shash_node_t *node, **head;
+	shash_node_t *node, **head, **snode;
 	unsigned long index;
 
 	if (!ht || !key || !*key || !value)
@@ -70,17 +70,31 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		return (0);
 	node->key = strdup(key);
 	node->value = strdup(value);
+	node->next = *head;
 	node->sprev = node->snext = NULL;
-	if (ht->stail)
+	*head = node;
+	if (ht->shead)
 	{
-	  node->sprev = ht->stail;
-	  ht->stail->snext = node;
+		for (snode = &ht->shead; *snode && strcmp(value, (*snode)->value) <= 0;)
+			snode = &(*snode)->snext;
+		if (*snode)
+		{
+			node->sprev = (*snode)->sprev;
+			node->snext = *snode;
+			if ((*snode)->sprev)
+				(*snode)->sprev->snext = node;
+			(*snode)->sprev = node;
+			*snode = node;
+		}
+		else
+		{
+			node->sprev = ht->stail;
+			*snode = node;
+			ht->stail = node;
+		}
 	}
 	else
-	  ht->shead = node;
-	ht->stail = node;
-	node->next = *head;
-	*head = node;
+		ht->shead = ht->stail = node;
 	return (1);
 }
 
@@ -122,10 +136,10 @@ void shash_table_print(const shash_table_t *ht)
 {
 	const shash_node_t *node;
 
-  if (!ht)
-    return;
+	if (!ht)
+		return;
 
-  node = ht->shead;
+	node = ht->shead;
 
 	if (node == NULL)
 		return;
@@ -150,10 +164,10 @@ void shash_table_print_rev(const shash_table_t *ht)
 {
 	const shash_node_t *node;
 
-  if (!ht)
-    return;
+	if (!ht)
+		return;
 
-  node = ht->stail;
+	node = ht->stail;
 
 	if (node == NULL)
 		return;
