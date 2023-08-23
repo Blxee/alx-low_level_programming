@@ -4,7 +4,7 @@ SRC = school.c main.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 
-.PHONY: all re clean oclean fclean
+.PHONY: re clean oclean fclean
 
 all: $(OBJ) m.h
 	$(CC) $(OBJ) -o $(NAME)
