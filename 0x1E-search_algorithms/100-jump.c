@@ -16,10 +16,11 @@ int jump_search(int *array, size_t size, int value)
 	const size_t jump_size = (size_t)sqrt(size);
 	size_t i = 0, j;
 
+	printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 	while (i + jump_size < size && array[i + jump_size] < value)
 	{
-		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 		i += jump_size;
+		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 	}
 
 	printf("Value found between indexes [%ld] and [%ld]\n", i, i + jump_size);
