@@ -15,7 +15,7 @@ int _advanced_binary(int *array, size_t left, size_t right, int value)
 {
 	size_t i, m;
 
-	if (left >= right)
+	if (left > right)
 		return (-1);
 
 	printf("Searching in array: ");
