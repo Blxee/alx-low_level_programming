@@ -22,14 +22,14 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 	for (j = 0; j < jump_size && nex->next; j++)
 		nex = nex->next;
-	printf("Value checked array[%ld] = [%d]\n", i + jump_size, nex->n);
+	printf("Value checked at index [%ld] = [%d]\n", i + jump_size, nex->n);
 	while (i + jump_size < size && nex->n < value)
 	{
 		cur = nex;
 		for (j = 0; j < jump_size && nex->next; j++)
 			nex = nex->next;
 		i += jump_size;
-		printf("Value checked array[%ld] = [%d]\n", i + jump_size, nex->n);
+		printf("Value checked at index [%ld] = [%d]\n", i + jump_size, nex->n);
 	}
 
 	printf("Value found between indexes [%ld] and [%ld]\n", i, i + jump_size);
@@ -37,7 +37,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	j = i;
 	while (j < size && j <= i + jump_size)
 	{
-		printf("Value checked array[%ld] = [%d]\n", j, cur->n);
+		printf("Value checked at index [%ld] = [%d]\n", j, cur->n);
 		if (cur->n == value)
 			return (cur);
 		cur = cur->next;
