@@ -35,7 +35,7 @@ int _advanced_binary(int *array, size_t left, size_t right, int value)
 		else
 			return (m);
 	}
-	else if (right - left == 1)
+	else if (left >= right)
 		return (-1);
 
 	if (value < array[m])
